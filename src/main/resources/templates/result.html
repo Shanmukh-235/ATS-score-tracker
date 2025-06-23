@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Score Result</title>
+  <link rel="stylesheet" th:href="@{./css/style.css}">
+</head>
+<body>
+  <h1>Result</h1>
+  <p><strong>Name:</strong> <span th:text="${name}"></span></p>
+  <p><strong>Score:</strong> <span th:text="${score}"></span>/100</p>
+
+  <form action="/" method="get">
+    <button type="submit">Upload Another Resume</button>
+  </form>
+</body>
+</html>
