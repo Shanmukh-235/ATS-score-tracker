@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="" th:href="@{/css/style.css}">
     <title>ATS Score Tracker</title>
 </head>
+
 <body>
-    <h1>ATS Score Tracker by </h1> 
+    <h1>ATS Score Tracker by </h1>
     <img th:src="@{/images/logo.png}" alt="Logo">
     <form action="/checkScore" method="post" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Enter your name" required><br>
-	<br>
-    <select name="role" required>
-        <option value="">Select Role</option>
-        <option value="Entry Level Developer">Entry Level Developer</option>
-        <option value="Java Full Stack Developer">Java Full Stack Developer</option>
-        <option value="Python Full Stack Developer">Python Full Stack Developer</option>
-        <option value="MERN Developer">MERN Stack Developer</option>
-        <option value="Database Associate">Database Associate</option>
-        <option value="Test Engineer">Testing/QA Engineer</option>
-        <option value="Software Engineer">Software Engineer</option>
-        <option value="Cloud Engineer">Cloud Computing Engineer</option>
-        <option value="DevOps Engineer">DevOps Engineer</option>
-    </select>
-    <br>
-    <input type="file" name="resume" required><br>
-	<br>
-    <button type="submit">Check Score</button>
-</form>
+        <div class="input-box">
+            <input type="text" name="name" required>
+            <label>Enter your name</label>
+        </div>
+
+        <div class="input-box">
+            <select name="role" required>
+                <option value="" disabled selected hidden></option>
+                <option value="Entry Level Developer">Entry Level Developer</option>
+                <option value="Java Full Stack Developer">Java Full Stack Developer</option>
+                <option value="Python Full Stack Developer">Python Full Stack Developer</option>
+                <option value="MERN Developer">MERN Stack Developer</option>
+                <option value="Database Associate">Database Associate</option>
+                <option value="Test Engineer">Testing/QA Engineer</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Cloud Engineer">Cloud Computing Engineer</option>
+                <option value="DevOps Engineer">DevOps Engineer</option>
+            </select>
+            <label>Select Role</label>
+        </div>
+
+        <input type="file" name="resume" id="resume"required>
+
+        <button type="submit">Check Score</button>
+    </form>
+
 
 </body>
+
 </html>
