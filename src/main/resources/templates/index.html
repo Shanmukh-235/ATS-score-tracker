@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="" th:href="@{/css/style.css}">
     <title>ATS Score Tracker</title>
 </head>
-
 <body>
     <h1>ATS Score Tracker by </h1>
     <img th:src="@{/images/logo.png}" alt="Logo">
@@ -16,7 +14,6 @@
             <input type="text" name="name" required>
             <label>Enter your name</label>
         </div>
-
         <div class="input-box">
             <select name="role" required>
                 <option value="" disabled selected hidden></option>
@@ -32,13 +29,11 @@
             </select>
             <label>Select Role</label>
         </div>
-
         <input type="file" name="resume" id="resume"required>
-
+        <span id="file-name">No file chosen</span>
+        <br><br>
         <button type="submit">Check Score</button>
     </form>
-
-
+    <script th:src="@{/js/script.js}"></script>
 </body>
-
 </html>

@@ -2,14 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Score Result</title>
-  <link rel="stylesheet" th:href="@{./css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-  <h1>Result</h1>
+  <h1>ATS Score Result</h1>
   <form action="/" method="get">
-    <p><strong>Name:</strong> <span th:text="${name}"></span></p>
-    <p><strong>Score:</strong> <span th:text="${score}"></span>/100</p>
+    <p><strong>Name:</strong> <span th:text="${name}">John Doe</span></p>
+
+    <!-- Animated Score -->
+    <h2>Score: <span id="animated-score">0</span>/100</h2>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Status -->
+    <p>Status: <span id="score-status"></span></p>
+
+    <!-- Actual score passed by backend -->
+    <span id="actual-score" th:text="${score}" style="display:none;"></span>
+
     <button type="submit">Upload Another Resume</button>
   </form>
+
+  <!-- External JS -->
+  <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

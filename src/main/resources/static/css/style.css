@@ -115,3 +115,49 @@ button:hover {
   background: #fff;
   color: #283038;
 }
+
+input[type="file"] {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 0;
+  cursor: pointer;
+  width: auto; /* Adjust as needed */
+  height: 40px;
+  position: relative;
+}
+
+input[type="file"]::file-selector-button {
+  background: transparent;
+  color: #fff; /* Or any text color you want */
+  border: none;
+  padding: -2px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ---- result.html ---- */
+
+.progress-container {
+  width: 100%;
+  max-width: 500px;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #4CAF50;
+  transition: width 0.5s ease;
+  border-radius: 25px 0 0 25px;
+}
+
+#score-status {
+  font-size: 20px;
+  font-weight: bold;
+}
