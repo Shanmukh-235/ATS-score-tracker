@@ -1,16 +1,23 @@
-document.getElementById("resume").addEventListener("change", function () {
-  const fileName = this.files[0] ? this.files[0].name : "No file chosen";
-  document.getElementById("file-name").textContent = fileName;
+document.addEventListener("DOMContentLoaded", function () {
+  const resumeInput = document.getElementById("resume");
+  const fileNameDisplay = document.getElementById("file-name");
+
+  if (resumeInput && fileNameDisplay) {
+    resumeInput.addEventListener("change", function () {
+      const fileName = this.files[0] ? this.files[0].name : "No file chosen";
+      fileNameDisplay.textContent = fileName;
+    });
+  }
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const scoreSpan = document.getElementById("actual-score");
-  if (!scoreSpan) {
-    console.error("Score element not found");
-    return;
-  }
+
+  if (!scoreSpan) return;
 
   const scoreValue = parseInt(scoreSpan.textContent.trim());
+
   if (isNaN(scoreValue)) {
     console.error("Score is not a number:", scoreSpan.textContent);
     return;
@@ -35,21 +42,22 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateStatus(score) {
     if (score <= 25) {
       statusElement.textContent = "Very Bad";
-      progressBar.style.backgroundColor = "#e53935";
+      //progressBar.style.backgroundColor = "#e53935";
     } else if (score <= 50) {
       statusElement.textContent = "Needs Improvement";
-      progressBar.style.backgroundColor = "#fb8c00";
+      //progressBar.style.backgroundColor = "#fb8c00";
     } else if (score <= 60) {
       statusElement.textContent = "Fair";
-      progressBar.style.backgroundColor = "#fdd835";
+      //progressBar.style.backgroundColor = "#fdd835";
     } else if (score <= 85) {
       statusElement.textContent = "Good";
-      progressBar.style.backgroundColor = "#43a047";
+      //progressBar.style.backgroundColor = "#43a047";
     } else {
-      statusElement.textContent = "Excellent";
-      progressBar.style.backgroundColor = "#2e7d32";
+      statusElement.textContent = "Excellent 🎉";
+      //progressBar.style.backgroundColor = "#2e7d32";
     }
   }
 
   updateStatus(scoreValue);
+  console.log("Extracted score from span:", scoreValue); // prints the ATS value in the console too
 });

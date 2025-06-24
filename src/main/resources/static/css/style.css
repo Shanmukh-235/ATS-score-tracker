@@ -137,12 +137,20 @@ input[type="file"]::file-selector-button {
   font-size: 14px;
 }
 
+input[type="file"]::file-selector-button:hover {
+  text-decoration: underline;
+}
+
+#file-name{
+  font-size: 12px;
+}
+
 /* ---- result.html ---- */
 
 .progress-container {
   width: 100%;
   max-width: 500px;
-  height: 30px;
+  height: 8px;
   background-color: #e0e0e0;
   border-radius: 25px;
   overflow: hidden;
@@ -152,12 +160,15 @@ input[type="file"]::file-selector-button {
 #progress-bar {
   height: 100%;
   width: 0%;
-  background-color: #4CAF50;
+  background-color: #283038;
   transition: width 0.5s ease;
   border-radius: 25px 0 0 25px;
 }
 
 #score-status {
-  font-size: 20px;
   font-weight: bold;
+}
+
+.cont{
+  color: #283038;
 }
