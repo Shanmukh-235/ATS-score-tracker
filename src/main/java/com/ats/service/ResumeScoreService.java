@@ -30,15 +30,20 @@ public class ResumeScoreService {
     // Additional keywords to boost the ATS score
     private static final Set<String> extraKeywords = Set.of(
         "agile", "scrum", "sdlc", "waterfall", "kanban", "jira", "confluence",
-        "ui", "ux", "ui/ux", "figma", "wireframe", "tools", "tool", "page", "pages",
+        "ui", "ux", "ui/ux", "figma", "wireframe", "tools", "tool", "page", "pages", "oops",
         "jsx", "rest api", "api", "swagger", "microservices", "postman",
         "unit testing", "integration testing", "git", "ci/cd", "mvc", "jwt"
+    );
+
+    private static final Set<String> extraSkillSet = Set.of(
+        "sap", "power bi", "data", "data analytics", "web scraping", "ms office", "data mining",
+        "artificial intelligence", "meachine learning", "ai", "iot"
     );
 
     // Role-specific keyword mapping
     private static final Map<String, Set<String>> roleKeywordsMap = Map.of(
         "java full stack developer", Set.of("mysql", "jdbc", "jsp", "servlets", "hibernate", "spring", "spring boot", "spring mvc"),
-        "python full stack developer", Set.of("django", "flask", "mysql", "mongo db"),
+        "python full stack developer", Set.of("django", "flask", "mysql", "pandas"),
         "mern developer", Set.of("mongodb", "express js", "react", "next.js"),
         "database associate", Set.of("mysql", "mongo db", "oracle", "sql server"),
         "test engineer", Set.of("selenium", "cypress", "junit", "testng", "postman", "rest assured"),
@@ -77,33 +82,31 @@ public class ResumeScoreService {
 
 
         switch (role.toLowerCase()) {
-            case "java full stack developer":
+            case "java full stack developer" -> {
                 roleKeywords.addAll(roleKeywordsMap.get("java full stack developer"));
                 expectedLangs.add("java");
-                break;
-            case "python full stack developer":
+            }
+            case "python full stack developer" -> {
                 roleKeywords.addAll(roleKeywordsMap.get("python full stack developer"));
-                expectedLangs.add("python"); 
-                break;
-            case "mern developer":
+                expectedLangs.add("python");
+            }
+            case "mern developer" -> {
                 roleKeywords.addAll(roleKeywordsMap.get("mern developer"));
-                expectedLangs.add("js"); // JavaScript
-                break;
-            case "test engineer":
+                expectedLangs.add("javascript"); // JavaScript
+            }
+            case "test engineer" -> {
                 roleKeywords.addAll(roleKeywordsMap.get("test engineer"));
                 expectedLangs.add("java");
-                break;
-            case "cloud engineer":
-            case "devops engineer":
+            }
+            case "cloud engineer", "devops engineer" -> {
                 roleKeywords.addAll(roleKeywordsMap.get(role.toLowerCase()));
                 expectedLangs.addAll(Set.of("python", "bash", "java"));
-                break;
-            case "database associate":
+            }
+            case "database associate" -> {
                 roleKeywords.addAll(roleKeywordsMap.get("database associate"));
                 expectedLangs.add("sql");
-                break;
-            default:
-                roleKeywords.addAll(Set.of());
+            }
+            default -> roleKeywords.addAll(Set.of());
         }
 
         // 1. Must contain at least one expected language
@@ -160,7 +163,11 @@ public class ResumeScoreService {
         if (content.contains("deployment tools")) score += 1.75;       
         if (content.contains("databases")) score += 1.75;
 
+        for(String extraSkills : extraSkillSet){
+            if(content.contains(extraSkills)) score+=2;
+        }
+
         // 8. Clamp score to 100
-        return (int) Math.min(score, 100);
+        return (int) Math.min(score+10, 100);
     }
 }
