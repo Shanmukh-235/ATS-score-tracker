@@ -29,15 +29,16 @@ public class ResumeScoreService {
 
     // Additional keywords to boost the ATS score
     private static final Set<String> extraKeywords = Set.of(
-        "agile", "scrum", "sdlc", "waterfall", "kanban", "jira", "confluence", "full stack", "abap", "mm",
+        "agile", "scrum", "sdlc", "waterfall", "kanban", "jira", "confluence", "full stack", 
         "ui", "ux", "ui/ux", "figma", "wireframe", "tools", "tool", "page", "pages", "oops", "hana",
-        "jsx", "rest api", "api", "swagger", "microservices", "postman", "crud", "jvm", "s/4hana",
-        "unit testing", "integration testing", "git", "ci/cd", "mvc", "jwt", "l1", "l2"
+        "jsx", "rest api", "api", "swagger", "microservices", "postman", "crud", 
+        "unit testing", "integration testing", "git"
     );
 
     private static final Set<String> extraSkillSet = Set.of(
-        "sap", "power bi", "data", "data analytics", "web scraping", "ms office", "data mining",
-        "artificial intelligence", "meachine learning", "ai", "iot"
+        "sap", "power bi", "data", "data analytics", "web scraping", "ms office", "data mining", 
+        "artificial intelligence", "meachine learning", "ai", "iot", "abap", "mm", "jvm", "s/4hana",
+        "ci/cd", "mvc", "jwt", "l1", "l2"
     );
 
     // Role-specific keyword mapping

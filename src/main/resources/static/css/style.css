@@ -93,7 +93,6 @@ input[type="file"] {
 
 /* File input basic styling */
 input[type="file"] {
-  margin-top: 15px;
   color: #fff;
   border-bottom: none;
 }

@@ -40,20 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 20);
 
   function updateStatus(score) {
-    if (score <= 25) {
-      statusElement.textContent = "Very Bad";
+    if (score <= 45) {
+      statusElement.textContent = "Very Bad 👎🏻" ;
       //progressBar.style.backgroundColor = "#e53935";
-    } else if (score <= 50) {
-      statusElement.textContent = "Needs Improvement";
+    } else if (score <= 55) {
+      statusElement.textContent = "Needs Improvement 🤖";
       //progressBar.style.backgroundColor = "#fb8c00";
-    } else if (score <= 60) {
-      statusElement.textContent = "Fair";
+    } else if (score <= 68) {
+      statusElement.textContent = "Fair 🐢";
       //progressBar.style.backgroundColor = "#fdd835";
-    } else if (score <= 85) {
-      statusElement.textContent = "Good";
+    } else if (score <= 72) {
+      statusElement.textContent = "Good 🐥";
       //progressBar.style.backgroundColor = "#43a047";
-    } else {
+    } else if (score <= 90){
       statusElement.textContent = "Excellent 🎉";
+      //progressBar.style.backgroundColor = "#2e7d32";
+    } else {
+      statusElement.textContent = "Outstanding 🐦‍🔥";
       //progressBar.style.backgroundColor = "#2e7d32";
     }
   }
