@@ -64,7 +64,7 @@ src/
 
 | Upload Resume Page | Score Result Page |
 |--------------------|-------------------|
-| ![App Screenshot](screenshots/upload.png)| ![App Screenshot](screenshots/result.png)|
+| ![App Screenshot](src/screenshots/upload.png)| ![App Screenshot](src/screenshots/result.png)|
 
 ## 📦 How to Run the Project
 
