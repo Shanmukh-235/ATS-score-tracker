@@ -118,13 +118,15 @@ public class ResumeScoreService {
         int matchedKeywords = 0;
         int progLangMatched = 0;
 
-        for (String keyword : baseKeywords) {
-            if (content.contains(keyword)) matchedKeywords++;
+        if (!role.equalsIgnoreCase("test engineer")) {
+            for (String keyword : baseKeywords) {
+                if (content.contains(keyword)) matchedKeywords++;
+            }
+            for (String keyword : roleKeywords) {
+                if (content.contains(keyword)) matchedKeywords++;
+            }
         }
 
-        for (String keyword : roleKeywords) {
-            if (content.contains(keyword)) matchedKeywords++;
-        }
 
         for (String lang : programmingLanguages) {
             if (content.contains(lang)) {

@@ -91,7 +91,7 @@
 	        <scope>test</scope>
 	    </dependency>
 	    
-	     <!-- Tika -->
+	     <!-- Apache Tika -->
 	    <dependency>
 		  <groupId>org.apache.tika</groupId>
 		  <artifactId>tika-core</artifactId>
